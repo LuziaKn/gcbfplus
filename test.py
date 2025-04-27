@@ -205,6 +205,7 @@ def test(args):
         f"success_rate: {success_mean * 100:.3f}%"
     )
 
+
     # save results
     if args.log:
         with open(os.path.join(path, "test_log.csv"), "a") as f:

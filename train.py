@@ -11,6 +11,12 @@ from gcbfplus.env import make_env
 from gcbfplus.trainer.trainer import Trainer
 from gcbfplus.trainer.utils import is_connected
 
+import os
+
+os.environ["XLA_PYTHON_CLIENT_PREALLOCATE"] = "false"
+os.environ["XLA_PYTHON_CLIENT_MEM_FRACTION"]=".XX"
+os.environ["XLA_PYTHON_CLIENT_ALLOCATOR"]="platform"
+
 
 def train(args):
     print(f"> Running train.py {args}")
@@ -50,7 +56,7 @@ def train(args):
         action_dim=env.action_dim,
         n_agents=env.num_agents,
         gnn_layers=args.gnn_layers,
-        batch_size=256,
+        batch_size=128,
         buffer_size=args.buffer_size,
         horizon=args.horizon,
         lr_actor=args.lr_actor,

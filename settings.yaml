@@ -11,7 +11,7 @@ DoubleIntegrator:
   --lr-actor: 1e-5
   --lr-cbf: 1e-5
   --loss-action-coef: 1e-4
-  --n-env-train: 16
+  --n-env-train: 8
   --horizon: 32
   --area-size: 4
 SingleIntegrator:

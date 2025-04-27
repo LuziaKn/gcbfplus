@@ -244,8 +244,8 @@ def render_video(
         ax.add_collection(agent_col)
     else:
         plot_r = ax.transData.transform([r, 0])[0] - ax.transData.transform([0, 0])[0]
-        agent_col = ax.scatter(n_pos[:, 0], n_pos[:, 1], n_pos[:, 2],
-                               s=plot_r, c=n_color, zorder=5)  # todo: the size of the agent might not be correct
+        # agent_col = ax.scatter(n_pos[:, 0], n_pos[:, 1], n_pos[:, 2],
+        #                        s=plot_r, c=n_color, zorder=5)  # todo: the size of the agent might not be correct
 
     # plot edges
     all_pos = graph0.states[:n_agent * 2 + n_hits, :dim]
